@@ -4,71 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "defa32418a2f17774f598e81b18c63dc",
+    "content-hash": "eb3cd206b7030b27e8557ed14c4544be",
     "packages": [
-        {
-            "name": "firebase/php-jwt",
-            "version": "v6.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "a49db6f0a5033aef5143295342f1c95521b075ff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/a49db6f0a5033aef5143295342f1c95521b075ff",
-                "reference": "a49db6f0a5033aef5143295342f1c95521b075ff",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4||^8.0"
-            },
-            "require-dev": {
-                "guzzlehttp/guzzle": "^6.5||^7.4",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpunit/phpunit": "^9.5",
-                "psr/cache": "^1.0||^2.0",
-                "psr/http-client": "^1.0",
-                "psr/http-factory": "^1.0"
-            },
-            "suggest": {
-                "ext-sodium": "Support EdDSA (Ed25519) signatures",
-                "paragonie/sodium_compat": "Support EdDSA (Ed25519) signatures when libsodium is not present"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Firebase\\JWT\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Neuman Vong",
-                    "email": "neuman+pear@twilio.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Anant Narayanan",
-                    "email": "anant@php.net",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
-            "homepage": "https://github.com/firebase/php-jwt",
-            "keywords": [
-                "jwt",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/firebase/php-jwt/issues",
-                "source": "https://github.com/firebase/php-jwt/tree/v6.10.0"
-            },
-            "time": "2023-12-01T16:26:39+00:00"
-        },
         {
             "name": "laminas/laminas-escaper",
             "version": "2.13.0",
@@ -183,6 +120,134 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "andrewsville/php-token-reflection",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Andrewsville/PHP-Token-Reflection.git",
+                "reference": "3e3a36de17f32889fd2d4b8108af16d3033ce9bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Andrewsville/PHP-Token-Reflection/zipball/3e3a36de17f32889fd2d4b8108af16d3033ce9bf",
+                "reference": "3e3a36de17f32889fd2d4b8108af16d3033ce9bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "TokenReflection": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3"
+            ],
+            "authors": [
+                {
+                    "name": "Ondřej Nešpor",
+                    "homepage": "https://github.com/andrewsville"
+                },
+                {
+                    "name": "Jaroslav Hanslík",
+                    "homepage": "https://github.com/kukulich"
+                }
+            ],
+            "description": "Library emulating the PHP internal reflection using just the tokenized source code.",
+            "homepage": "http://andrewsville.github.com/PHP-Token-Reflection/",
+            "keywords": [
+                "library",
+                "reflection",
+                "tokenizer"
+            ],
+            "support": {
+                "issues": "https://github.com/Andrewsville/PHP-Token-Reflection/issues",
+                "source": "https://github.com/Andrewsville/PHP-Token-Reflection/tree/1.3.1"
+            },
+            "time": "2012-08-25T21:26:44+00:00"
+        },
+        {
+            "name": "apigen/apigen",
+            "version": "v2.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/apigen/ApiGen.git",
+                "reference": "bca0954e92621a48c6870be57115026a8d032706"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/apigen/ApiGen/zipball/bca0954e92621a48c6870be57115026a8d032706",
+                "reference": "bca0954e92621a48c6870be57115026a8d032706",
+                "shasum": ""
+            },
+            "require": {
+                "andrewsville/php-token-reflection": "~1.3.1",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "kukulich/fshl": "~2.1.0",
+                "nette/nette": "~2.1.1",
+                "php": ">=5.3.0",
+                "texy/texy": "~2.4.0"
+            },
+            "suggest": {
+                "ext-bz2": "*",
+                "ext-phar": "*",
+                "ext-zip": "*",
+                "ext-zlib": "*"
+            },
+            "bin": [
+                "apigen"
+            ],
+            "type": "project",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "3.0.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "ApiGen": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "http://davidgrudl.com"
+                },
+                {
+                    "name": "Ondřej Nešpor",
+                    "homepage": "https://github.com/andrewsville"
+                },
+                {
+                    "name": "Jaroslav Hanslík",
+                    "homepage": "https://github.com/kukulich"
+                }
+            ],
+            "description": "API documentation generator for PHP 5.3+",
+            "homepage": "http://apigen.org/",
+            "keywords": [
+                "api",
+                "docblock",
+                "documentation",
+                "generator",
+                "phpDocumentor",
+                "phpdoc"
+            ],
+            "support": {
+                "forum": "https://groups.google.com/group/apigen",
+                "issues": "https://github.com/apigen/apigen/issues",
+                "source": "https://github.com/apigen/apigen"
+            },
+            "time": "2014-09-01T18:06:36+00:00"
+        },
         {
             "name": "codeigniter/coding-standard",
             "version": "v1.7.14",
@@ -746,6 +811,53 @@
             "time": "2023-11-16T06:04:49+00:00"
         },
         {
+            "name": "kukulich/fshl",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kukulich/fshl.git",
+                "reference": "974c294ade5d76c0c16b6fe3fd3a584ba999b24f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kukulich/fshl/zipball/974c294ade5d76c0c16b6fe3fd3a584ba999b24f",
+                "reference": "974c294ade5d76c0c16b6fe3fd3a584ba999b24f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "FSHL": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Jaroslav Hanslík",
+                    "homepage": "https://github.com/kukulich"
+                }
+            ],
+            "description": "FSHL is a free, open source, universal, fast syntax highlighter written in PHP.",
+            "homepage": "http://fshl.kukulich.cz/",
+            "keywords": [
+                "highlight",
+                "library",
+                "syntax"
+            ],
+            "support": {
+                "issues": "https://github.com/kukulich/fshl/issues",
+                "source": "https://github.com/kukulich/fshl/tree/2.1.0"
+            },
+            "abandoned": true,
+            "time": "2012-09-08T19:00:07+00:00"
+        },
+        {
             "name": "mikey179/vfsstream",
             "version": "v1.6.11",
             "source": {
@@ -854,6 +966,98 @@
                 }
             ],
             "time": "2023-03-08T13:26:56+00:00"
+        },
+        {
+            "name": "nette/nette",
+            "version": "v2.1.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/nette.git",
+                "reference": "5e3bb6b2f48cfd7ac0a2b22cffb32c9a715d4f76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/nette/zipball/5e3bb6b2f48cfd7ac0a2b22cffb32c9a715d4f76",
+                "reference": "5e3bb6b2f48cfd7ac0a2b22cffb32c9a715d4f76",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "ext-tokenizer": "*",
+                "php": ">=5.3.1"
+            },
+            "replace": {
+                "latte/latte": "self.version",
+                "nette/application": "self.version",
+                "nette/bootstrap": "self.version",
+                "nette/caching": "self.version",
+                "nette/component-model": "self.version",
+                "nette/database": "self.version",
+                "nette/di": "self.version",
+                "nette/finder": "self.version",
+                "nette/forms": "self.version",
+                "nette/http": "self.version",
+                "nette/mail": "self.version",
+                "nette/neon": "self.version",
+                "nette/php-generator": "self.version",
+                "nette/reflection": "self.version",
+                "nette/robot-loader": "self.version",
+                "nette/safe-stream": "self.version",
+                "nette/security": "self.version",
+                "nette/tokenizer": "self.version",
+                "nette/utils": "self.version",
+                "tracy/tracy": "self.version"
+            },
+            "require-dev": {
+                "nette/tester": "~1.6"
+            },
+            "suggest": {
+                "ext-fileinfo": "",
+                "ext-gd": "",
+                "ext-mbstring": "",
+                "ext-pdo": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Nette/common/shortcuts.php"
+                ],
+                "classmap": [
+                    "Nette/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "Nette Framework - innovative framework for fast and easy development of secured web applications in PHP. Write less, have cleaner code and your work will bring you joy.",
+            "homepage": "https://nette.org",
+            "keywords": [
+                "Forms",
+                "database",
+                "debugging",
+                "framework",
+                "mailing",
+                "mvc",
+                "templating"
+            ],
+            "support": {
+                "issues": "https://github.com/nette/nette/issues",
+                "source": "https://github.com/nette/nette/tree/v2.1.13"
+            },
+            "time": "2020-10-07T01:34:28+00:00"
         },
         {
             "name": "nexusphp/cs-config",
@@ -3923,6 +4127,66 @@
                 }
             ],
             "time": "2024-02-01T13:17:36+00:00"
+        },
+        {
+            "name": "texy/texy",
+            "version": "v2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dg/texy.git",
+                "reference": "67d02cd95e4aaa7dae96b24a7d04ba924d641015"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dg/texy/zipball/67d02cd95e4aaa7dae96b24a7d04ba924d641015",
+                "reference": "67d02cd95e4aaa7dae96b24a7d04ba924d641015",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "replace": {
+                "dg/texy": "self.version"
+            },
+            "require-dev": {
+                "nette/tester": "~1.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/texy.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "http://davidgrudl.com"
+                }
+            ],
+            "description": "Texy converts plain text in easy to read Texy syntax into structurally valid (X)HTML. It supports adding of images, links, nested lists, tables and has full support for CSS. Texy supports hyphenation of long words (which reflects language rules), clickable emails and URL (emails are obfuscated against spambots), national typographic single and double quotation marks, ellipses, em dashes, dimension sign, nonbreakable spaces (e.g. in phone numbers), acronyms, arrows and many others. Texy code can optionally contain HTML tags.",
+            "homepage": "http://texy.info",
+            "keywords": [
+                "html",
+                "markdown",
+                "markup language",
+                "plain text",
+                "text",
+                "textile",
+                "texy",
+                "wiki",
+                "xhtml"
+            ],
+            "support": {
+                "issues": "https://github.com/dg/texy/issues",
+                "source": "https://github.com/dg/texy/tree/v2.4"
+            },
+            "time": "2014-02-10T02:34:57+00:00"
         },
         {
             "name": "theseer/tokenizer",
