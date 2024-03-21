@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    container_name: ci4_web
+    ports:
+      - "8022:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: user
+      DB_NAME: ci4_database
+  db:
+    image: mysql:5.7
+    container_name: ci4_db
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ci4_database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    ports:
+      - "3326:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: ci4_phpmyadmin
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8282:80"
+    depends_on:
+      - db
+volumes:
+  db_data:
