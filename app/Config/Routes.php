@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+
 $routes->get('/', 'Home::index');
 $routes->get('centres', 'CentresController::index');
 $routes->get('centres/(:num)', 'CentresController::show/$1');
