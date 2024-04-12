@@ -6,6 +6,8 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+$routes->options('(:any)', '', ['filter' => 'cors']);
+
 $routes->get('/', 'Home::index');
 
 // CENTRES
