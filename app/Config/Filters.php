@@ -24,6 +24,8 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'cors' => \App\Filters\Cors::class,
+        'jwt' => \App\Filters\JwtFilter::class,
     ];
 
     /**
@@ -37,6 +39,8 @@ class Filters extends BaseConfig
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
+            'cors' => [],
+            'jwt' => ['except' => ['users/login', 'users/register']],
         ],
         'after' => [
             'toolbar',
