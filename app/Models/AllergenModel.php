@@ -4,11 +4,11 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProviderModel extends Model
+class AllergenModel extends Model
 {
-    protected $table = 'proveidor';
+    protected $table = 'allergens';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nom', 'telefon', 'adreça', 'correu'];
+    protected $allowedFields = ['name', 'icon_route'];
     protected $returnType = 'array';
     protected $useTimestamps = false;
 }

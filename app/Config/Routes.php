@@ -41,3 +41,17 @@ $routes->get('menus/(:num)', 'MenuController::show/$1');
 $routes->post('menus', 'MenuController::create');
 $routes->put('menus/(:num)', 'MenuController::update/$1');
 $routes->delete('menus/(:num)', 'MenuController::delete/$1');
+
+// PRICES
+$routes->get('prices', 'PriceController::index');
+$routes->get('prices/(:num)', 'PriceController::show/$1');
+$routes->post('prices', 'PriceController::create');
+$routes->put('prices/(:num)', 'PriceController::update/$1');
+$routes->delete('prices/(:num)', 'PriceController::delete/$1');
+
+// ALLERGEN
+$routes->get('allergens', 'AllergenController::index');
+$routes->get('allergens/(:num)', 'AllergenController::show/$1');
+$routes->post('allergens', 'AllergenController::create');
+$routes->put('allergens/(:num)', 'AllergenController::update/$1');
+$routes->delete('allergens/(:num)', 'AllergenController::delete/$1');
