@@ -17,7 +17,36 @@ $routes->post('centres', 'CentresController::create');
 $routes->put('centres/(:num)', 'CentresController::update/$1');
 $routes->delete('centres/(:num)', 'CentresController::delete/$1');
 
+//COMANDA
+$routes->get('comanda', 'ComandaController::index');
+$routes->get('comanda/(:num)', 'ComandaController::show/$1');
+$routes->post('comanda', 'ComandaController::create');
+$routes->put('comanda/(:num)', 'ComandaController::update/$1');
+$routes->delete('comanda/(:num)', 'ComandaController::delete/$1');
+
+
 // USERS
+$routes->post('register', 'UserController::register');
+$routes->post('login', 'UserController::login');
+
+// PRODUCTS
+$routes->get('products', 'ProductsController::index');
+$routes->get('products/(:num)', 'ProductsController::show/$1');
+$routes->post('products', 'ProductsController::create');
+$routes->put('products/(:num)', 'ProductsController::update/$1');
+$routes->delete('products/(:num)', 'ProductsController::delete/$1');
+
+
+
+// PRODUCTS*PROVIDERS
+$routes->get('product-provider', 'ProductsProviderController::index');
+$routes->get('product-provider/(:num)', 'ProductsProviderController::show/$1');
+$routes->post('product-provider', 'ProductsProviderController::create');
+$routes->put('product-provider/(:num)', 'ProductsProviderController::update/$1');
+$routes->delete('product-provider/(:num)', 'ProductsProviderController::delete/$1');
+
+
+
 $routes->post('users/register', 'UserController::register');
 $routes->post('users/login', 'UserController::login');
 
