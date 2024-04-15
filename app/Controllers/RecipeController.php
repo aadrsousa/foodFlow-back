@@ -29,7 +29,9 @@ class RecipeController extends ResourceController
                 'title' => $this->request->getPost('title'),
                 'description' => $this->request->getPost('description'),
                 'ingredients' => $this->request->getPost('ingredients'),
-                'parent_recipe_id' => $this->request->getPost('parent_recipe_id')
+                'allergens' => $this->request->getPost('allergens'),
+                'parent_recipe_id' => $this->request->getPost('parent_recipe_id'),
+                'type_name' => $this->request->getPost('type_name')
             ];
             $model->insert($data);
             return $this->respondCreated($data);
