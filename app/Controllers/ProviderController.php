@@ -14,8 +14,11 @@ class ProviderController extends ResourceController
     {
         try {
             $model = new ProviderModel();
-            $data = $model->findAll();
-            return $this->respond($data);
+            $providers = $model->findAll();
+            foreach ($providers as &$provider) {
+                $provider['products'] = $model->getProducts($provider['id']);
+            }
+            return $this->respond($providers);
         } catch (\Exception $e) {
             return $this->failServerError("No s'ha pogut recuperar els proveïdors.");
         }
@@ -42,9 +45,10 @@ class ProviderController extends ResourceController
     {
         try {
             $model = new ProviderModel();
-            $data = $model->find($id);
-            if ($data) {
-                return $this->respond($data);
+            $provider = $model->find($id);
+            if ($provider) {
+                $provider['products'] = $model->getProducts($id);
+                return $this->respond($provider);
             } else {
                 return $this->failNotFound("No s'ha trobat el proveïdor amb ID: " . $id);
             }

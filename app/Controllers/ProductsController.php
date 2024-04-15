@@ -2,11 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Models\ProducteModel;
+use App\Models\ProductModel;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\Controller;
 
-class ProductesController extends Controller
+class ProductsController extends Controller
 {
     use ResponseTrait;
 
@@ -17,33 +17,34 @@ class ProductesController extends Controller
         header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
     }
 
+
     public function index()
     {
-        $model = new ProducteModel();
-        $productes = $model->findAll();
-        foreach ($productes as &$producte) {
-            $producte['proveidors'] = $model->getProveidors($producte['id']);
+        $model = new ProductModel();
+        $products = $model->findAll();
+        foreach ($products as &$product) {
+            $product['providers'] = $model->getProviders($product['id']);
         }
-        return $this->respond($productes);
+        return $this->respond($products);
     }
 
     public function show($id = null)
     {
-        $model = new ProducteModel();
-        $producte = $model->find($id);
-        if ($producte) {
-            $producte['proveidors'] = $model->getProveidors($id);
-            return $this->respond($producte);
+        $model = new ProductModel();
+        $product = $model->find($id);
+        if ($product) {
+            $product['providers'] = $model->getProviders($id);
+            return $this->respond($product);
         } else {
-            return $this->failNotFound('Producte not found');
+            return $this->failNotFound('Product not found');
         }
     }
 
     public function create()
     {
-        $expectedFields = ['nom', 'caducitat', 'preu', 'stock', 'descripcio'];
+        $expectedFields = ['name', 'expiration', 'price', 'stock', 'description'];
         $data = $this->request->getPost($expectedFields);
-        $model = new ProducteModel();
+        $model = new ProductModel();
         $model->insert($data);
         return $this->respondCreated($data);
     }
@@ -53,17 +54,17 @@ class ProductesController extends Controller
         try {
             $data = $this->request->getJSON();
         } catch (\Exception $e) {
-            return $this->failValidationError('Error al analitzar la cadena JSON: ' . $e->getMessage());
+            return $this->failValidationError('Error parsing JSON string: ' . $e->getMessage());
         }
     
-        $model = new ProducteModel();
+        $model = new ProductModel();
         $model->update($id, $data);
         return $this->respondUpdated($data);
     }
 
     public function delete($id = null)
     {
-        $model = new ProducteModel();
+        $model = new ProductModel();
         $model->delete($id);
         return $this->respondDeleted(['id' => $id]);
     }
