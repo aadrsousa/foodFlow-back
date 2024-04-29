@@ -2,37 +2,37 @@
 
 namespace App\Controllers;
 
-use App\Models\ComandaModel;
+use App\Models\OrderModel;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\Controller;
 
-class ComandaController extends Controller
+class OrderController extends Controller
 {
     use ResponseTrait;
 
     public function index()
     {
-        $model = new ComandaModel();
+        $model = new OrderModel();
         $comandes = $model->findAll();
         return $this->respond($comandes);
     }
 
     public function show($id = null)
     {
-        $model = new ComandaModel();
+        $model = new OrderModel();
         $comanda = $model->find($id);
         if ($comanda) {
             return $this->respond($comanda);
         } else {
-            return $this->failNotFound('Comanda not found');
+            return $this->failNotFound('Order not found');
         }
     }
 
     public function create()
     {
-        $expectedFields = ['proveidor', 'productes', 'data', 'estat'];
+        $expectedFields = ['provider', 'products', 'date', 'status'];
         $data = $this->request->getPost($expectedFields);
-        $model = new ComandaModel();
+        $model = new OrderModel();
         $model->insert($data);
         return $this->respondCreated($data);
     }
@@ -42,17 +42,17 @@ class ComandaController extends Controller
         try {
             $data = $this->request->getJSON();
         } catch (\Exception $e) {
-            return $this->failValidationError('Error al analizar la cadena JSON: ' . $e->getMessage());
+            return $this->failValidationError('Error al analitzar la cadena JSON: ' . $e->getMessage());
         }
 
-        $model = new ComandaModel();
+        $model = new OrderModel();
         $model->update($id, $data);
         return $this->respondUpdated($data);
     }
 
     public function delete($id = null)
     {
-        $model = new ComandaModel();
+        $model = new OrderModel();
         $model->delete($id);
         return $this->respondDeleted(['id' => $id]);
     }

@@ -10,12 +10,6 @@ class ProductsController extends Controller
 {
     use ResponseTrait;
 
-    public function __construct()
-    {
-        header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
-        header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-    }
 
 
     public function index()
@@ -54,7 +48,7 @@ class ProductsController extends Controller
         try {
             $data = $this->request->getJSON();
         } catch (\Exception $e) {
-            return $this->failValidationError('Error parsing JSON string: ' . $e->getMessage());
+            return $this->failValidationError('Error al analitzar la cadena JSON: ' . $e->getMessage());
         }
     
         $model = new ProductModel();

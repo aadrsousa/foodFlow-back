@@ -18,11 +18,11 @@ $routes->put('centres/(:num)', 'CentresController::update/$1');
 $routes->delete('centres/(:num)', 'CentresController::delete/$1');
 
 //COMANDA
-$routes->get('comanda', 'ComandaController::index');
-$routes->get('comanda/(:num)', 'ComandaController::show/$1');
-$routes->post('comanda', 'ComandaController::create');
-$routes->put('comanda/(:num)', 'ComandaController::update/$1');
-$routes->delete('comanda/(:num)', 'ComandaController::delete/$1');
+$routes->get('order', 'OrderController::index');
+$routes->get('order/(:num)', 'OrderController::show/$1');
+$routes->post('order', 'OrderController::create');
+$routes->put('order/(:num)', 'OrderController::update/$1');
+$routes->delete('order/(:num)', 'OrderController::delete/$1');
 
 
 // USERS

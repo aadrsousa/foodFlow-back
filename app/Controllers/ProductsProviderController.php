@@ -41,7 +41,7 @@ class ProductsProviderController extends Controller
         try {
             $data = $this->request->getJSON();
         } catch (\Exception $e) {
-            return $this->failValidationError('Error parsing JSON string: ' . $e->getMessage());
+            return $this->failValidationError('Error al analitzar la cadena JSON: ' . $e->getMessage());
         }
         $productsProviderModel = new ProductsProviderModel();
         $productsProviderModel->update($id, $data);

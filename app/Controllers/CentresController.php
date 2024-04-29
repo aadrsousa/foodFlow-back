@@ -14,15 +14,6 @@ class CentresController extends Controller
 {
     use ResponseTrait;
 
-     // Configura els headers CORS per permetre les peticions des de l'origen especificat.
-
-    public function __construct()
-    {
-        header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
-        header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-    }
-
     /**
      * Obté tots els centres.
      *
