@@ -6,9 +6,9 @@ use CodeIgniter\Model;
 
 class ProviderModel extends Model
 {
-    protected $table = 'proveidor';
+    protected $table = 'provider';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nom', 'telefon', 'adreça', 'correu'];
+    protected $allowedFields = ['name', 'company_identifier', 'address', 'phone'];
     protected $returnType = 'array';
     protected $useTimestamps = false;
 

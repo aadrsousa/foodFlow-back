@@ -29,10 +29,10 @@ class ProviderController extends ResourceController
         try {
             $model = new ProviderModel();
             $data = [
-                'nom' => $this->request->getPost('nom'),
-                'telefon' => $this->request->getPost('telefon'),
-                'adreça' => $this->request->getPost('adreça'),
-                'correu' => $this->request->getPost('correu')
+                'nom' => $this->request->getPost('name'),
+                'telefon' => $this->request->getPost('company_identifier'),
+                'adreça' => $this->request->getPost('address'),
+                'correu' => $this->request->getPost('phone')
             ];
             $model->insert($data);
             return $this->respondCreated($data);
