@@ -19,7 +19,7 @@ class ProductModel extends Model
 
         $providers = [];
         foreach ($results as $result) {
-            $provider = $this->db->table('provider')->select('id, company_identifier')->where('id', $result['provider_id'])->get()->getRow();
+            $provider = $this->db->table('providers')->select('id, company_identifier')->where('id', $result['provider_id'])->get()->getRow();
             if ($provider) {
                 $providers[] = $provider;
             }

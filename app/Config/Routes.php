@@ -17,7 +17,7 @@ $routes->post('centres', 'CentresController::create');
 $routes->put('centres/(:num)', 'CentresController::update/$1');
 $routes->delete('centres/(:num)', 'CentresController::delete/$1');
 
-//COMANDA
+//ORDER
 $routes->get('order', 'OrderController::index');
 $routes->get('order/(:num)', 'OrderController::show/$1');
 $routes->post('order', 'OrderController::create');
