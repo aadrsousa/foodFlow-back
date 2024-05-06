@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+/**
+ * Model per gestionar els productes i proveidors.
+ */
 
 class ProductsProviderModel extends Model
 {

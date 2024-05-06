@@ -4,6 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
+/**
+ * Model per gestionar els proveidors.
+ */
+
 class ProviderModel extends Model
 {
     protected $table = 'provider';

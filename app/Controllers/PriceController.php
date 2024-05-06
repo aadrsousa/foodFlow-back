@@ -6,10 +6,18 @@ use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\PriceModel;
 
+/**
+ * Controlador per gestionar els preus.
+ */
 class PriceController extends ResourceController
 {
     use ResponseTrait;
 
+    /**
+     * Obté tots els preus.
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function index()
     {
         try {
@@ -21,6 +29,11 @@ class PriceController extends ResourceController
         }
     }
 
+    /**
+     * Crea un nou preu.
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function create()
     {
         try {
@@ -37,6 +50,12 @@ class PriceController extends ResourceController
         }
     }
 
+    /**
+     * Obté un preu específic segons el seu ID.
+     *
+     * @param int|null $id ID del preu
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function show($id = null)
     {
         try {
@@ -52,6 +71,12 @@ class PriceController extends ResourceController
         }
     }
 
+    /**
+     * Actualitza un preu existent segons el seu ID.
+     *
+     * @param int|null $id ID del preu
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function update($id = null)
     {
         try {
@@ -67,6 +92,12 @@ class PriceController extends ResourceController
         }
     }
 
+    /**
+     * Elimina un preu segons el seu ID.
+     *
+     * @param int|null $id ID del preu
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function delete($id = null)
     {
         try {

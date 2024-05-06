@@ -6,10 +6,18 @@ use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\MenuModel;
 
+/**
+ * Controlador per gestionar els menús.
+ */
 class MenuController extends ResourceController
 {
     use ResponseTrait;
 
+    /**
+     * Obté tots els menús.
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function index()
     {
         try {
@@ -21,6 +29,11 @@ class MenuController extends ResourceController
         }
     }
 
+    /**
+     * Crea un nou menú.
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function create()
     {
         try {
@@ -38,6 +51,12 @@ class MenuController extends ResourceController
         }
     }
 
+    /**
+     * Obté un menú específic segons el seu ID.
+     *
+     * @param int|null $id ID del menú
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function show($id = null)
     {
         try {
@@ -53,6 +72,12 @@ class MenuController extends ResourceController
         }
     }
 
+    /**
+     * Actualitza un menú existent segons el seu ID.
+     *
+     * @param int|null $id ID del menú
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function update($id = null)
     {
         try {
@@ -68,6 +93,12 @@ class MenuController extends ResourceController
         }
     }
 
+    /**
+     * Elimina un menú segons el seu ID.
+     *
+     * @param int|null $id ID del menú
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function delete($id = null)
     {
         try {
@@ -82,3 +113,4 @@ class MenuController extends ResourceController
         }
     }
 }
+

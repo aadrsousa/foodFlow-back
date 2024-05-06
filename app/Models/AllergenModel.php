@@ -4,6 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
+/**
+ * Model per gestionar els allergens.
+ */
+
 class AllergenModel extends Model
 {
     protected $table = 'allergens';
