@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class ProviderModel extends Model
 {
-    protected $table = 'provider';
+    protected $table = 'providers';
     protected $primaryKey = 'id';
     protected $allowedFields = ['name', 'company_identifier', 'address', 'phone'];
     protected $returnType = 'array';
@@ -15,13 +15,13 @@ class ProviderModel extends Model
     public function getProducts($provider_id)
     {
         $builder = $this->db->table('products_provider');
-        $builder->select('product_id');
+        $builder->select('products_id');
         $builder->where('provider_id', $provider_id);
         $results = $builder->get()->getResultArray();
 
         $products = [];
         foreach ($results as $result) {
-            $product = $this->db->table('products')->select('id, name')->where('id', $result['product_id'])->get()->getRow();
+            $product = $this->db->table('products')->select('id, name')->where('id', $result['products_id'])->get()->getRow();
             if ($product) {
                 $products[] = $product;
             }
