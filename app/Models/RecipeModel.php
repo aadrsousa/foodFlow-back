@@ -4,6 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
+/**
+ * Model per gestionar les receptes.
+ */
+
 class RecipeModel extends Model
 {
     protected $table = 'recipes';

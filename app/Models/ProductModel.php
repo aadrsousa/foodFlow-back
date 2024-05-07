@@ -4,6 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
+/**
+ * Model per gestionar els productes/stocks.
+ */
+
 class ProductModel extends Model
 {
     protected $table = 'products';

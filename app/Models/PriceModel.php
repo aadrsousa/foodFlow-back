@@ -4,6 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
+/**
+ * Model per gestionar els preus.
+ */
+
 class PriceModel extends Model
 {
     protected $table = 'prices';

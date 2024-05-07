@@ -837,18 +837,6 @@ to show relevant path info and hide as much of the path as possible.</dd>
 
     
         <section class="phpdocumentor-description"><p>base directories of your application that will be displayed instead of the full path.</p>
-<p>Keys are paths, values are replacement strings</p>
-<p>[!] EXAMPLE (for Laravel 5):</p>
-<p>Kint::$app_root_dirs = [
-base_path() =&gt; '&lt;BASE&gt;',
-app_path() =&gt; '&lt;APP&gt;',
-config_path() =&gt; '&lt;CONFIG&gt;',
-database_path() =&gt; '&lt;DATABASE&gt;',
-public_path() =&gt; '&lt;PUBLIC&gt;',
-resource_path() =&gt; '&lt;RESOURCE&gt;',
-storage_path() =&gt; '&lt;STORAGE&gt;',
-];</p>
-<p>Defaults to [$_SERVER['DOCUMENT_ROOT'] =&gt; '&lt;ROOT&gt;']</p>
 </section>
 
     
@@ -884,7 +872,6 @@ storage_path() =&gt; '&lt;STORAGE&gt;',
 
     
         <section class="phpdocumentor-description"><p>enable detection when Kint is command line.</p>
-<p>Formats output with whitespace only; does not HTML-escape it</p>
 </section>
 
     
@@ -990,9 +977,6 @@ storage_path() =&gt; '&lt;STORAGE&gt;',
 
     
         <section class="phpdocumentor-description"><p>Kint mode</p>
-<p>false: Disabled
-true: Enabled, default mode selection
-other: Manual mode selection</p>
 </section>
 
     
@@ -1063,9 +1047,6 @@ other: Manual mode selection</p>
 
     
         <section class="phpdocumentor-description"><p>format of the link to the source file in trace entries.</p>
-<p>Use %f for file path, %l for line number.</p>
-<p>[!] EXAMPLE (works with for phpStorm and RemoteCall Plugin):</p>
-<p>Kint::$file_link_format = 'http://localhost:8091/?message=%f:%l';</p>
 </section>
 
     

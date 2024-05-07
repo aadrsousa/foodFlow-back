@@ -2,6 +2,10 @@
 
 use CodeIgniter\Model;
 
+/**
+ * Model per gestionar els usuaris.
+ */
+
 class UserModel extends Model
 {
     protected $table = 'users';

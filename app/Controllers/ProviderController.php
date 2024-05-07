@@ -6,10 +6,18 @@ use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\ProviderModel;
 
+/**
+ * Controlador per gestionar els proveïdors.
+ */
 class ProviderController extends ResourceController
 {
     use ResponseTrait;
 
+    /**
+     * Obté tots els proveïdors amb els seus productes associats.
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function index()
     {
         try {
@@ -24,6 +32,11 @@ class ProviderController extends ResourceController
         }
     }
 
+    /**
+     * Crea un nou proveïdor.
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function create()
     {
         try {
@@ -41,6 +54,12 @@ class ProviderController extends ResourceController
         }
     }
 
+    /**
+     * Obté un proveïdor específic segons l'ID amb els seus productes associats.
+     *
+     * @param int|null $id ID del proveïdor
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function show($id = null)
     {
         try {
@@ -57,6 +76,12 @@ class ProviderController extends ResourceController
         }
     }
 
+    /**
+     * Actualitza un proveïdor existent segons l'ID.
+     *
+     * @param int|null $id ID del proveïdor
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function update($id = null)
     {
         try {
@@ -72,6 +97,12 @@ class ProviderController extends ResourceController
         }
     }
 
+    /**
+     * Elimina un proveïdor segons l'ID.
+     *
+     * @param int|null $id ID del proveïdor
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function delete($id = null)
     {
         try {
@@ -86,3 +117,4 @@ class ProviderController extends ResourceController
         }
     }
 }
+

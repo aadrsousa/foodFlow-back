@@ -6,10 +6,18 @@ use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\RecipeModel;
 
+/**
+ * Controlador per gestionar les receptes.
+ */
 class RecipeController extends ResourceController
 {
     use ResponseTrait;
 
+    /**
+     * Obté totes les receptes.
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function index()
     {
         try {
@@ -21,6 +29,11 @@ class RecipeController extends ResourceController
         }
     }
 
+    /**
+     * Crea una nova recepta.
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function create()
     {
         try {
@@ -40,6 +53,12 @@ class RecipeController extends ResourceController
         }
     }
 
+    /**
+     * Obté una recepta específica segons l'ID.
+     *
+     * @param int|null $id ID de la recepta
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function show($id = null)
     {
         try {
@@ -55,6 +74,12 @@ class RecipeController extends ResourceController
         }
     }
 
+    /**
+     * Actualitza una recepta existent segons l'ID.
+     *
+     * @param int|null $id ID de la recepta
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function update($id = null)
     {
         try {
@@ -70,6 +95,12 @@ class RecipeController extends ResourceController
         }
     }
 
+    /**
+     * Elimina una recepta segons l'ID.
+     *
+     * @param int|null $id ID de la recepta
+     * @return \CodeIgniter\HTTP\Response
+     */
     public function delete($id = null)
     {
         try {
@@ -84,3 +115,4 @@ class RecipeController extends ResourceController
         }
     }
 }
+

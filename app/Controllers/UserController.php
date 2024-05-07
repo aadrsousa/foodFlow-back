@@ -11,6 +11,11 @@ class UserController extends ResourceController
 {
     use ResponseTrait;
 
+    /**
+     * Registra un nou usuari.
+     *
+     * @return \CodeIgniter\HTTP\ResponseInterface
+     */
     public function register(): \CodeIgniter\HTTP\ResponseInterface
     {
         try {
@@ -30,6 +35,11 @@ class UserController extends ResourceController
         }
     }
 
+    /**
+     * Inicia sessió d'un usuari.
+     *
+     * @return \CodeIgniter\HTTP\ResponseInterface
+     */
     public function login(): \CodeIgniter\HTTP\ResponseInterface
     {
         try {
@@ -43,7 +53,7 @@ class UserController extends ResourceController
             }
 
             if (!password_verify($password, $user['password'])) {
-                return $this->fail('Contrassenya incorrecta');
+                return $this->fail('Contrasenya incorrecta');
             }
 
             $key = getenv('JWT_SECRET');
@@ -61,3 +71,4 @@ class UserController extends ResourceController
         }
     }
 }
+
